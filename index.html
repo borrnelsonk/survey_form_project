@@ -3,38 +3,43 @@
     <head>
         <meta charset="utf-8" />
         <title></title>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />   
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <script charset="utf-8" src="app.js"></script>
+        <link rel='stylesheet' href='app.css' type='text/css' />
     </head> 
     <body>
-        <div>
+         <!-- Wrapper-->
+         <div class="wrapper">
+        <div >
             <header class="header">
-                <h1 id="title" > Kenneth & Nelson Survey Form</h1>
-                <p id="description">
-                    Please  take your time to fill this form. your feedbsck is important to us
+                <h1 id="title" class="description text-center"> Kenneth & Nelson Survey Form</h1>
+                <p id="description" class="description text-center">
+                    Please  take your time to fill this form. your feedback is important to us
                 </p>
             </header>
         </div>
-        
+       
+        <div class="form">
         <form id="survey-form">
-            <div>
-                <label id="name-label">Name</label><br>
-                <input id="name" type="text" placeholder="e.g: Borr Kenneth" required/>
+            <div class="form-group">
+                <label id="name-label" class="labels">Name</label><br>
+                <input id="name" class="form-input" type="text" placeholder="e.g: Borr Kenneth" required/>
             </div>
 
-            <div>
+            <div class="form-group">
                 <label id="email-label">Email</label><br>
-                <input  id="email" type="email"placeholder="e.g: myname@gmail.com" required
+                <input  type="email" id="email" class="form-input" placeholder="e.g: myname@gmail.com" required
                 />
             </div>
 
-            <div >
+            <div class="form-group">
                 <label id="number-label">Age</label><br>
-                <input id="number" min="18" max="100" type="number"placeholder="Optional"/>
+                <input id="number" class="form-input" min="18" max="100" placeholder="Optional"/>
             </div>
 
-            <div>
-                <p>Which option best describes your profession?</p>
-                <select id="dropdown" required>
+            <div class="form-group">
+                <p >Which option best describes your profession?</p>
+                <select id="dropdown" name="role" class="form-input" required>
                     <option disabled selected value>Select your best fit</option>
                     <option value="student">Engineering</option>
                     <option value="job">Agriculture</option>
@@ -44,70 +49,107 @@
                 </select>
             </div>
             
-            <div> 
+            <div class="form-group">
                 <p>Would you recommend this site to a friend?</p>
                 <label>
-                    <input 
-                    value="definitely"
-                    type="radio" 
-                    name="user-recommendation"
+                    <input class="form-input"
+                        name="user-recommend" 
+                        value="definitely" 
+                        type="radio" 
+                        
                     /> Definitely
                 </label>
                 <label>
-                    <input 
-                    value="maybe"
-                    type="radio" 
-                    name="user-recommendation"
+                    <input class="form-input"
+                        name="user-recommend" 
+                        value="maybe" 
+                        type="radio" 
+                        
                     />Maybe
                 </label>
                 <label>
                     <input 
-                    value="not-sure"
-                    type="radio" 
-                    name="user-recommendation"
+                        name="user-recommend" 
+                        value="not-sure" 
+                        type="radio" 
+                        class="form-input"
                     />Not sure
                 </label>
             </div>
 
-            <div>
+            <div class="form-group">
                 <p>What improvements do you want to see?</p> 
-                <label>
-                    <input 
-                    type="checkbox"
-                    value="data-visualization"
+                <label
+                    ><input
+                        name="prefer"
+                        value="data-visualization"
+                        type="checkbox"
+                        class="form-input"
                     />Data Visualization
                 </label>
                 <label>
                     <input
-                    type="checkbox" 
-                    value="challenges"
+                        name="prefer"
+                        value="challenges"
+                        type="checkbox"
+                        class="form-input"
                     />Challenges
                 </label>
                 <label>
                     <input
-                    type="checkbox" 
-                    value="forum"
+                        name="prefer"
+                        value="open-source-community"
+                        type="checkbox"
+                        class="input-checkbox"
+                    />Open Source Community
+                </label>
+
+                <label>
+                    <input
+                        name="prefer"
+                        value="videos"
+                        type="checkbox"
+                        class="input-checkbox"
+                    />Videos
+                </label>
+
+                <label>
+                    <input
+                        name="prefer"
+                        value="forum"
+                        type="checkbox"
+                        class="input-checkbox"
                     />Forum
                 </label>
                 <label>
-                    <input 
-                    type="checkbox"
-                    value="additional-courses"
+                    <input
+                        name="prefer"
+                        value="additional-courses"
+                        type="checkbox"
+                        class="input-checkbox"
                     />Additional Courses
                 </label>
             </div>
             
-            <div>
+            <div class="form-group">
                 <p>Any comments or suggestions?</p>
-                <textarea id="comments"placeholder="Enter your comment here...">
+                <textarea class="form-input"
+                    id="comments"
+                    class="input-textarea"
+                    name="comment"
+                    placeholder="Enter your comment here...">
                 </textarea>
             </div>
             
-            <div>
-                <button id="submit">
+            <div class="form-group">
+                <button type="submit" id="submit" class="submit-button" onclick="ValidateEmail(document.survey-form.email)">
                     Submit
                 </button>
             </div>
         </form>
+        </div>
+        <script src="app.js"></script>
+        </div>
+        
     </body>
 </html>
