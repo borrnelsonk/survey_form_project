@@ -4,14 +4,14 @@
         <meta charset="utf-8" />
         <title></title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <script charset="utf-8" src="C:\microverse\survey_form_project\app.js"></script>
-        <link rel="stylesheet" href="C:\microverse\survey_form_project\app.css" />
+        <script charset="utf-8" src="app.js"></script>
+        <link rel='stylesheet' href='app.css' type='text/css' />
     </head> 
-    <body onload='document.form1.text1.focus()'>
+    <body>
         <div>
             <header class="header">
-                <h1 id="title"> Kenneth & Nelson Survey Form</h1>
-                <p id="description">
+                <h1 id="title" class="description text-center"> Kenneth & Nelson Survey Form</h1>
+                <p id="description" class="description text-center">
                     Please  take your time to fill this form. your feedbsck is important to us
                 </p>
             </header>
@@ -35,19 +35,19 @@
             </div>
 
             <div class="form-group">
-                <p>Which option best describes your current role?</p>
+                <p>Which option best describes your profession?</p>
                 <select id="dropdown" name="role" class="form-control" required>
-                    <option disabled selected value>Select current role</option>
-                    <option value="student">Student</option>
-                    <option value="job">Full Time Job</option>
-                    <option value="learner">Full Time Learner</option>
-                    <option value="preferNo">Prefer not to say</option>
+                    <option disabled selected value>Select your best fit</option>
+                    <option value="student">Engineering</option>
+                    <option value="job">Agriculture</option>
+                    <option value="learner">Banking</option>
+                    <option value="preferNo">Sporting</option>
                     <option value="other">Other</option>
                 </select>
             </div>
             
             <div class="form-group">
-                <p>Would you recommend freeCodeCamp to a friend?</p>
+                <p>Would you recommend this site to a friend?</p>
                 <label>
                     <input 
                         name="user-recommend" 
@@ -139,10 +139,11 @@
             </div>
             
             <div class="form-group">
-                <button type="submit" id="submit" class="submit-button">
+                <button type="submit" id="submit" class="submit-button" onclick="ValidateEmail(document.survey-form.email)">
                     Submit
                 </button>
             </div>
         </form>
+        <script src="app.js"></script>
     </body>
 </html>
